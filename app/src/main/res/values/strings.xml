@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">KotlinMessenger</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="log_in">Log in</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="back_to_register">Back to register</string>
+    <string name="select_photo">Select photo</string>
+    <string name="signOut">Sign out</string>
+    <string name="newMessage">New message</string>
+    <string name="enter_message">Enter message</string>
+    <string name="send_message">Send</string>
+</resources>
