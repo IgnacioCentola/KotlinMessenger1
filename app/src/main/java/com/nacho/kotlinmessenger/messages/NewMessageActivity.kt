@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.user_row_newmessage.view.*
 
 class NewMessageActivity : AppCompatActivity() {
 
-    private var current_User: User?=null
+    private var currentUser: User?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,8 +69,10 @@ class NewMessageActivity : AppCompatActivity() {
 //                        adapter.add(UserItem(user!!))
 //                    }
 
-                    if (user?.username != current_User?.username){
+                    if (user?.username != currentUser?.username){
                         adapter.add(UserItem(user!!))
+                    }else{
+                        return
                     }
 
                     adapter.setOnItemClickListener { item, view ->
