@@ -8,7 +8,7 @@ import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.nacho.kotlinmessenger.KeyboardManager
+import com.nacho.kotlinmessenger.models.KeyboardManager
 import com.nacho.kotlinmessenger.R
 import com.nacho.kotlinmessenger.models.ChatMessage
 import com.nacho.kotlinmessenger.models.User
@@ -38,7 +38,7 @@ class ChatLogActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat_log)
 
 
-        keyboardManager?.hideKeyboard()
+//        keyboardManager?.hideKeyboard()
 
 
 

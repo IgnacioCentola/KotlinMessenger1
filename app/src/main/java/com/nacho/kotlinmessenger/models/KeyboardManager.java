@@ -1,7 +1,6 @@
-package com.nacho.kotlinmessenger;
+package com.nacho.kotlinmessenger.models;
 
 import android.content.Context;
-import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,9 +17,9 @@ public class KeyboardManager extends AppCompatActivity {
         }
     }
 
-    public void showSoftKeyboard(View view) {
-        imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        view.requestFocus();
-        imm.showSoftInput(view, 0);
-    }
+//    public void showSoftKeyboard(View view) {
+//        imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+//        view.requestFocus();
+//        imm.showSoftInput(view, 0);
+//    }
 }
