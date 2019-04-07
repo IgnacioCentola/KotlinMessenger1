@@ -8,6 +8,7 @@ import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.nacho.kotlinmessenger.KeyboardManager
 import com.nacho.kotlinmessenger.R
 import com.nacho.kotlinmessenger.models.ChatMessage
 import com.nacho.kotlinmessenger.models.User
@@ -23,15 +24,23 @@ class ChatLogActivity : AppCompatActivity() {
 
     companion object {
         val TAG = "LogChat"
+
     }
 
     val adapter = GroupAdapter<ViewHolder>()
+
+    var keyboardManager: KeyboardManager? = null
 
     var toUser: User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_log)
+
+
+        keyboardManager?.hideKeyboard()
+
+
 
         //asignamos el adapter para administrar el recycler view
         recycler_view_chat_log.adapter = adapter
@@ -135,6 +144,8 @@ class ChatLogActivity : AppCompatActivity() {
 
         val latestMessageToReference = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
         latestMessageToReference.setValue(chatMessage)
+
+        keyboardManager?.hideKeyboard()
 
     }
 
