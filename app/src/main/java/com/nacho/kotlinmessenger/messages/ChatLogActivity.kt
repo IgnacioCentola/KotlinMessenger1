@@ -2,13 +2,13 @@ package com.nacho.kotlinmessenger.messages
 
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.nacho.kotlinmessenger.models.KeyboardManager
 import com.nacho.kotlinmessenger.R
 import com.nacho.kotlinmessenger.models.ChatMessage
 import com.nacho.kotlinmessenger.models.User
@@ -29,7 +29,7 @@ class ChatLogActivity : AppCompatActivity() {
 
     val adapter = GroupAdapter<ViewHolder>()
 
-    var keyboardManager: KeyboardManager? = null
+
 
     var toUser: User? = null
 
@@ -56,6 +56,7 @@ class ChatLogActivity : AppCompatActivity() {
             Log.d(TAG, "Attempt to send message...")
             //mandamos mensaje tras click en send
             performSendMessage()
+            edittext_chat_log.onEditorAction(EditorInfo.IME_ACTION_DONE) // ----> Oculta el teclado
         }
     }
 
@@ -108,6 +109,11 @@ class ChatLogActivity : AppCompatActivity() {
 
 
     private fun performSendMessage() {
+
+
+
+
+
         //obtenemos lo escrito en el edit text y lo meteremos en en el obj ChatMessage
         val text = edittext_chat_log.text.toString()
 
@@ -145,7 +151,7 @@ class ChatLogActivity : AppCompatActivity() {
         val latestMessageToReference = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
         latestMessageToReference.setValue(chatMessage)
 
-        keyboardManager?.hideKeyboard()
+
 
     }
 

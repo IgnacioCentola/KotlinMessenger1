@@ -55,7 +55,7 @@ class NewMessageActivity : AppCompatActivity() {
             //llamado cuando se toman todos los usuarios de la database de Firebase
             override fun onDataChange(p0: DataSnapshot) {
 
-                fetchCurrentUser()
+
                 //creamos un adapter nuevo
                 val adapter = GroupAdapter<ViewHolder>()
                 //p0 es el paraámetro que contiene toda la data
